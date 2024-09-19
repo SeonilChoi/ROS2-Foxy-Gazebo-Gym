@@ -24,4 +24,4 @@ python3 ./src/cartpole_test.py
 
 ## Reference
 
-[ros2learn] (https://github.com/AcutronicRobotics/ros2learn.git)
+[ros2learn](https://github.com/AcutronicRobotics/ros2learn.git)
