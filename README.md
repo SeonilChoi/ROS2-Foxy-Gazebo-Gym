@@ -7,7 +7,7 @@
 This package presents custom OpenAI Gym environments using Gazebo and ROS2 foxy.
 
 > [!NOTE]
-> This work does not include gazebo plugins. If you need this, you can check the following [link](https://github.com/SeonilChoi/MPU-9250-Serial-Communication-in-ROS2-Foxy.git).
+> This work does not include gazebo plugins. If you need this, you can check the following [link](https://github.com/SeonilChoi/Gazebo-Plugins-ROS2.git).
 >
 
 ## Usage
