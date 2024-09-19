@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot name="cartpole" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="cartpole_plugins">
+    <gazebo>
+      <plugin name="set_joint_velocity_plugin" filename="libset_joint_velocity_plugin.so">
+        <joint_name1>prismatic_joint</joint_name1>
+        <namespace>cartpole</namespace>
+      </plugin>
+      
+      <plugin name="set_joint_position_plugin" filename="libset_joint_position_plugin.so">
+        <joint_name1>prismatic_joint</joint_name1>
+        <joint_name2>revolute_joint</joint_name2>
+        <static>true</static> <!--If this tag is true, the velocities of joints are zero.-->
+        <namespace>cartpole</namespace>
+      </plugin>
+      
+      <plugin name="custom_joint_state_publisher_plugin" filename="libcustom_joint_state_publisher_plugin.so">
+        <joint_name1>prismatic_joint</joint_name1>
+        <joint_name2>revolute_joint</joint_name2>
+        <namespace>cartpole</namespace>
+      </plugin>
+      
+    </gazebo>
+  </xacro:macro>
+</robot>

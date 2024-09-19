@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot name="cartpole" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="bar_visual">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+        <mesh filename="file://ros_foxy_gazebo_gym/meshes/cartpole/bar.STL" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </xacro:macro>
+
+  <xacro:macro name="motor_visual">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+        <mesh filename="file://ros_foxy_gazebo_gym/meshes/cartpole/motor.STL" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </xacro:macro>
+
+  <xacro:macro name="link_visual">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+        <mesh filename="file://ros_foxy_gazebo_gym/meshes/cartpole/link.STL" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </xacro:macro>
+
+  <xacro:macro name="bar_inertial">
+    <origin rpy="0 0 0" xyz="0.0 0.000859 -0.02"/>
+    <mass value="1.28"/>
+    <inertia ixx="0.000854" ixy="0.0" ixz="0.0" iyy="0.068949" iyz="-0.000022" izz="0.068438"/>
+  </xacro:macro>
+
+  <xacro:macro name="motor_inertial">
+    <origin rpy="0 0 0" xyz="0.0 0.018229 0.0"/>
+    <mass value="0.03953"/>
+    <inertia ixx="0.000026" ixy="0.0" ixz="0.0" iyy="0.000013" iyz="0.0" izz="0.000023"/>
+  </xacro:macro>
+
+  <xacro:macro name="link_inertial">
+    <origin rpy="0 0 0" xyz="0.0 0.09 0.0"/>
+    <mass value="0.07121"/>
+    <inertia ixx="0.000772" ixy="0.0" ixz="0.0" iyy="0.000005" iyz="0.0" izz="0.000772"/>
+  </xacro:macro>
+
+  <xacro:macro name="bar_collision">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+        <mesh filename="file://ros_foxy_gazebo_gym/meshes/cartpole/bar.STL" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </xacro:macro>
+  
+  <xacro:macro name="motor_collision">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+        <mesh filename="file://ros_foxy_gazebo_gym/meshes/cartpole/motor.STL" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </xacro:macro>
+  
+  <xacro:macro name="link_collision">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+        <mesh filename="file://ros_foxy_gazebo_gym/meshes/cartpole/link.STL" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </xacro:macro>
+</robot>

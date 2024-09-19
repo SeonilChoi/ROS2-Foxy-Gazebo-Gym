@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot name="cartpole" xmlns:xacro="http://ros.rog/wiki/xacro"> 
+  <xacro:include filename="ros_foxy_gazebo_gym/urdf/cartpole/cartpole.description.xacro"/>
+  <xacro:include filename="ros_foxy_gazebo_gym/urdf/cartpole/cartpole.plugin.xacro"/>
+  <xacro:cartpole_description/>
+  <xacro:cartpole_plugins/>
+  <link name="world"/>
+
+  <joint name="world_fixed" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="bar"/>
+  </joint>
+</robot>

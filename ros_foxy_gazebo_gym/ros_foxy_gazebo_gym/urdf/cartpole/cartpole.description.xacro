@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<robot name="cartpole" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="cartpole_description">
+    <xacro:include filename="ros_foxy_gazebo_gym/urdf/cartpole/cartpole.link.xacro"/>
+    <xacro:include filename="ros_foxy_gazebo_gym/urdf/cartpole/cartpole.gazebo.xacro"/>
+
+    <link name="bar">
+      <visual>
+        <xacro:bar_visual/>
+      </visual>
+      <inertial>
+        <xacro:bar_inertial/>
+      </inertial>
+      <collision>
+        <xacro:bar_collision/>
+      </collision>
+    </link>
+
+    <joint name="prismatic_joint" type="prismatic">
+      <origin xyz="0 0 0" rpy="${pi/2.0} 0 0"/>
+      <parent link="bar"/>
+      <child link="motor"/>
+      <axis xyz="1 0 0"/>
+      <limit effort="20.0" lower="-0.38" upper="0.38" velocity="20.0"/>
+    </joint>
+
+    <link name="motor">
+      <visual>
+        <xacro:motor_visual/>
+      </visual>
+      <inertial>
+        <xacro:motor_inertial/>
+      </inertial>
+      <collision>
+        <xacro:motor_collision/>
+      </collision>
+    </link>
+
+    <joint name="revolute_joint" type="revolute">
+      <origin xyz="0 0.02 0" rpy="0 0 0"/>
+      <parent link="motor"/>
+      <child link="link"/>
+      <axis xyz="0 0 1"/>
+      <limit velocity="1.0" effort="1.0" lower="-1.57" upper="1.57"/>
+    </joint>
+
+    <link name="link">
+      <visual>
+        <xacro:link_visual/>
+      </visual>
+      <inertial>
+        <xacro:link_inertial/>
+      </inertial>
+      <collision>
+        <xacro:link_collision/>
+      </collision>
+    </link>
+
+    <xacro:bar_reference/>
+    <xacro:motor_reference/>
+    <xacro:link_reference/>
+  </xacro:macro>
+</robot>
