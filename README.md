@@ -9,9 +9,11 @@ This package presents custom OpenAI Gym environments using Gazebo and ROS2 foxy.
 ## Usage
 
 ```
+source /opt/ros/foxy/setup.bash
+```
+
+```
 cd ros2_foxy_gazebo_gym
 pip3 install -e .
-source /opt/ros/foxy/setup.bash
 python3 ./src/cartpole_test.py
-
 ```
